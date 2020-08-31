@@ -89,14 +89,23 @@ span2.onclick = function () {
 
   var newinput = function() {
     var id = 1;
-    var parent = document.getElementById("container to ad");
-    console.log(parent);
+    var parent = document.getElementById("container-to-ad");
+    // console.log(parent);
     var field = document.createElement("input")
     field.className = "myclassname"
     field.style = "display:block;"
     field.id = "input" + id;
     parent.appendChild(field);
     id += 1;
+  }
+
+
+  var delinput = function()
+  {
+    var parent = document.getElementById("container-to-ad");
+    // parent.removeChild(parent.childNodes[parent.length-1]);  
+    parent.removeChild(parent.lastChild);
+
   }
 
 
