@@ -86,7 +86,7 @@ span.onclick = function () {
 var nxt = function()
 {
 
-  if (n<(l))
+  if (n<(l)) 
   {
     document.getElementById("s2").disabled = true;
     document.getElementById("s1").disabled = false;
