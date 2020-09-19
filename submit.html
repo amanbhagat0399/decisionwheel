@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    h3,
+    .content {
+      display: inline-block;
+    }
+
+    p {
+      font-size: large;
+      font-weight: 450;
+    }
+
+    .out {
+      box-sizing: content-box;
+      border: 3px solid black;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Modal Example</h2>
+
+  <!-- Trigger/Open The Modal -->
+  <button id="myBtn" onclick="changehtml()">Open Modal</button>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p class="out">
+      <h3>PROBLEM :</h3>
+      <P class="content" id="p1">problem</P>
+      </p>
+      <P class="out">
+      <h3>CHOICES :</h3>
+      <ul>
+        <h3>CHOICE :</h3>
+        <P class="content" id="p2">"choice 1"</P>
+        <br>
+        <h3>CONSEQUENCES :</h3>
+        <P class="content" id="p31">"consequences 1"</P>
+        <P class="content" id="p32">"consequences 2"</P>
+        <P class="content" id="p33">"consequences 3"</P>
+        <br>
+        <h3>VALUES :</h3>
+        <P class="content" id="p41">"values 1"</P>
+        <P class="content" id="p42">"values 2"</P>
+        <P class="content" id="p43">"values 3"</P>
+        <br>
+        <h3>FEELING :</h3>
+        <P class="content" id="p5">"feeling 1"</P>
+      </ul>
+      </P>
+      <p class="out">
+      <h3>MORE INFO :</h3>
+      <P class="content" id="p6">more info</P>
+      </p>
+      <p class="out">
+      <h3>WHO CAN HELP ? :</h3>
+      <P class="content" id="p7">who can help??</P>
+      </p>
+      <p class="out">
+      <h3>DECISION :</h3>
+      <P class="content" id="p8">decision</P>
+      </p>
+      <p class="out">
+      <h3>ASSES DECISION :</h3>
+      <P class="content" id="p9">asses decision</P>
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+
+    myobj =
+    {
+      "problem": " this is the problem ",
+
+      "choicearray": ["choice 1 ", "choice 2", "choice 3"],
+
+      "choices":
+      {
+
+      },
+      "moreinfo": "More info about problem",
+
+      "whocanhelp": "who can help??",
+
+      "Decision": "this is the decision taken by user",
+
+      "assessdecisison": " for decision assesment"
+    }
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+      changehtml();
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    function changehtml() {
+      modal.style.display = "block";
+      document.getElementById("p1").innerHTML = myobj.problem;
+      document.getElementById("p6").innerHTML = myobj.moreinfo;
+      document.getElementById("p7").innerHTML = myobj.whocanhelp;
+      document.getElementById("p8").innerHTML = myobj.Decision;
+      document.getElementById("p9").innerHTML = myobj.assessdecisison;
+    }
+
+  </script>
+
+</body>
+
+</html>
